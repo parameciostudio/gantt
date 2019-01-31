@@ -356,7 +356,7 @@ main () {(
 			test "${#SUBTASK_NAME}" -gt "${MAX_NAME_LENGTH:-0}" \
 			&& MAX_NAME_LENGTH="${#SUBTASK_NAME}"
 			SUBTASK_ESTIMATE_MAX="$(subtask_get_estimate_max "${SUBTASK}")"
-			TOTAL_ESTIMATE_TIME="$(( TOTAL_ESTIMATE_TIME + "${SUBTASK_ESTIMATE_MAX:-0}" ))"
+			TOTAL_ESTIMATE_TIME="$(( TOTAL_ESTIMATE_TIME + ${SUBTASK_ESTIMATE_MAX:-0} ))"
 		done <<- EOF
 			${SUBTASKS}
 			EOF
@@ -413,7 +413,7 @@ main () {(
 						fi
 					)"
 				characters_offset="$(( characters_offset + ${#SUBTASK_ESTIMATE_BAR} ))"
-				total_hours="$(( total_hours + "${SUBTASK_ESTIMATE_MAX:-0}" ))"
+				total_hours="$(( total_hours + ${SUBTASK_ESTIMATE_MAX:-0} ))"
 			done <<- EOF
 				${SUBTASKS}
 				EOF
